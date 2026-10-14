@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nanparak v2.0 - HD 6D - by dilzNoeltz</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#050508;color:#fff;font-family:system-ui;min-height:100vh}
+#step1{position:fixed;inset:0;z-index:100;background:#000;display:flex;align-items:center;justify-content:center;padding:12px}
+.video-bg{position:absolute;inset:0} .video-bg video{width:100%;height:100%;object-fit:cover;filter:brightness(.35)}
+.panel{position:relative;z-index:2;width:100%;max-width:380px;background:rgba(12,12,16,.92);border:1px solid #222;border-radius:18px;padding:16px}
+.header-video{height:150px;border-radius:12px;overflow:hidden;position:relative;border:1px solid #2a2a2a;margin-bottom:12px} .header-video video{width:100%;height:100%;object-fit:cover}
+.badge{display:inline-block;padding:5px 12px;border-radius:999px;background:linear-gradient(90deg,#ff00ff,#a000ff);font-size:11px;font-weight:800;margin-top:6px}
+.input{width:100%;padding:12px;border-radius:10px;background:#1a1a1e;border:1px solid #333;color:#fff;margin-top:8px;font-size:13px}
+.btn{width:100%;padding:12px;border-radius:12px;background:#fff;color:#000;font-weight:800;margin-top:10px;border:none}
+.btn2{width:100%;padding:11px;border-radius:12px;background:linear-gradient(90deg,#ff00ff,#a000ff);color:#fff;font-weight:700;margin-top:8px;border:none}
+#step2{display:none;min-height:100vh;background:#08080a;padding:10px}
+.card{background:#121216;border:1px solid #222;border-radius:14px;padding:12px;margin-top:10px}
+.story{height:170px;border-radius:14px;overflow:hidden;position:relative;border:1px solid #222} .story video{width:100%;height:100%;object-fit:cover}
+.avatar{width:44px;height:44px;border-radius:50%;background:#222;border:2px solid #333}
+.nowplaying{display:flex;align-items:center;gap:10px;background:#1a1a1e;border:1px solid #222;border-radius:12px;padding:10px;margin-top:8px}
+</style>
+</head>
+<body>
+<div id="step1">
+<div class="video-bg"><video autoplay muted loop playsinline><source src="nanparak-video-15detik.mp4" type="video/mp4"></video></div>
+<div class="panel">
+<div class="header-video"><video autoplay muted loop playsinline><source src="nanparak-video-15detik.mp4" type="video/mp4"></video><div style="position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.85))"></div><div style="position:absolute;bottom:8px;left:10px;font-size:11px;color:#ff00ff;font-weight:800">NANPARAK V2.0 • HD 6D • Video Mata</div></div>
+<div style="text-align:center"><div style="font-size:24px;font-weight:900">NANPARAK V2.0</div><div style="font-size:11px;color:#aaa;margin-top:2px">Admin: dilzNoelz • Admin KW: Raka & Ainan</div><div class="badge">DARK STARS • CONTROL PANEL</div></div>
+<div style="margin-top:12px"><div style="font-size:11px;color:#ff00ff;font-weight:700">USERNAME — 123</div><input id="user" class="input" value="123" placeholder="Username: 123"></div>
+<div style="margin-top:8px"><div style="font-size:11px;color:#ff00ff;font-weight:700">PASSWORD — 123</div><input id="pass" class="input" type="password" value="123" placeholder="Password: 123"></div>
+<button class="btn" onclick="login()">EXECUTION ATTACK • LOGIN</button>
+<button class="btn2" onclick="login()">MASUK NANPARAK V2.0 — 123 / 123</button>
+<div id="msg" style="text-align:center;margin-top:6px;font-size:11px;color:#ff5a5a"></div>
+</div>
+</div>
+<div id="step2">
+<div style="max-width:480px;margin:0 auto">
+<div class="card" style="padding:0;overflow:hidden"><div class="story"><video autoplay muted loop playsinline><source src="nanparak-video-15detik.mp4" type="video/mp4"></video><div style="position:absolute;bottom:0;left:0;right:0;padding:10px;background:linear-gradient(transparent,rgba(0,0,0,.9))"><div style="font-weight:800">Jester Project • Nanparak v2.0 • HD 6D</div><div style="font-size:11px;color:#aaa">Kam, 24 Sep 2026 • 16:12 WIB • by dilzNoelz</div></div></div></div>
+<div class="card"><div style="display:flex;align-items:center;gap:10px"><div class="avatar"></div><div style="flex:1"><div style="font-size:11px;color:#ff00ff">SALAM,</div><div style="font-weight:800">dilzNoelz • Admin</div></div><div style="color:#ff0000;font-weight:900;font-size:20px">Wicked</div></div></div>
+<div class="card"><div style="font-size:11px;color:#888">STATUS • KONTAK BANYAK</div><div style="display:flex;gap:10px;overflow:auto;margin-top:8px"><div style="text-align:center"><div class="avatar" style="border:2px dashed #333;display:grid;place-items:center">+</div><div style="font-size:10px">Tambah</div></div><div style="text-align:center"><div class="avatar" style="background:linear-gradient(135deg,#ff00ff,#a000ff)"></div><div style="font-size:10px">Raka</div></div><div style="text-align:center"><div class="avatar" style="background:linear-gradient(135deg,#00ff88,#00aaff)"></div><div style="font-size:10px">Ainan</div></div><div style="text-align:center"><div class="avatar" style="border:2px solid #ff00ff"></div><div style="font-size:10px">dilzNoelz</div></div></div>
+<div style="margin-top:12px"><div style="font-size:11px;color:#888">NOW PLAYING • akumilikmu</div><div class="nowplaying"><div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#ff00ff,#a000ff);display:grid;place-items:center">🎵</div><div style="flex:1"><div style="font-weight:700;font-size:13px">akumilikmu</div><div style="font-size:11px;color:#888">Judul lagu — by dilzNoelz</div></div></div><audio id="audio" controls autoplay loop style="width:100%;margin-top:8px;height:32px"></audio></div></div>
+<div class="card" style="background:linear-gradient(90deg,#1a0a1a,#120a1a);border:1px solid #3a1a3a"><div style="font-weight:800;color:#ffaa00;text-align:center">HIDUP SETENANG INI SETELAH ADA APK BUG — NANPARAK V2.0</div><div style="margin-top:8px;background:#1a1a1e;border-radius:10px;padding:8px;font-size:12px">Global Chat — Banyak kontak — Video mata 15 detik — akumilikmu</div></div>
+</div>
+</div>
+<script>
+function login(){
+let u=document.getElementById('user').value.trim();
+let p=document.getElementById('pass').value.trim();
+if(u!=='123' || p!=='123'){document.getElementById('msg').innerText='❌ Username 123 / Password 123 Salah!';return;}
+document.getElementById('step1').style.display='none';
+document.getElementById('step2').style.display='block';
+let a=document.getElementById('audio');
+a.src='https://cdn.pixabay.com/audio/2022/10/30/audio_8ef06a37a0.mp3';
+a.play().catch(()=>{});
+}
+</script>
+</body>
+</html>
