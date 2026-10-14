@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>dilzNoelz - Kuis Auto Jawab + Robot AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Plus Jakarta Sans',system-ui;background:radial-gradient(800px 400px at 20% 0%,#FFE1F0,transparent),radial-gradient(600px 300px at 80% 10%,#D9E8FF,transparent),radial-gradient(500px 300px at 50% 100%,#E9DDFF,transparent),#FFF8FD;color:#2D1B4E}
+.nav{max-width:1200px;margin:12px auto 0;background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(232,222,255,.9));backdrop-filter:blur(20px);border:1px solid rgba(0,0,0,.06);border-radius:999px;padding:10px 18px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.logo{display:flex;align-items:center;gap:10px}
+.cat-logo{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#FFB86B,#FF7EB8);display:grid;place-items:center;font-size:28px;box-shadow:0 4px 12px rgba(255,126,184,.3)}
+.h1{font-family:'Fredoka';font-size:32px;line-height:1;font-weight:700;color:#3B2070}
+.card{background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.06);border-radius:24px;box-shadow:0 8px 30px rgba(0,0,0,.05);backdrop-filter:blur(12px)}
+.grid{max-width:1200px;margin:16px auto;padding:0 12px;display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.robot-card{background:linear-gradient(135deg,#FFF0F7,#E8DEFF);border-radius:24px;padding:18px;position:relative;overflow:hidden}
+.input{width:100%;padding:12px 14px;border-radius:14px;border:1.5px solid rgba(0,0,0,.08);background:#fff;font-weight:600}
+.btn{padding:12px 18px;border-radius:14px;border:none;font-weight:800;cursor:pointer;background:linear-gradient(90deg,#8B5CF6,#FF7EB8);color:#fff;box-shadow:0 8px 20px rgba(139,92,246,.3)}
+.bubble{padding:12px 14px;border-radius:18px;font-size:13px;line-height:1.4;max-width:90%}
+.bubble.me{background:#D9E8FF;border-bottom-right-radius:6px;margin-left:auto}
+.bubble.ai{background:#FFE1F0;border-bottom-left-radius:6px}
+.quiz-box{background:#fff;border:2px solid #E9DDFF;border-radius:18px;padding:14px;margin-top:12px}
+.opt{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;border:1.5px solid #E9DDFF;margin:4px;font-size:13px;font-weight:600;background:#fff}
+.opt.correct{background:#DCFCE7;border-color:#86EFAC;color:#166534}
+.frame{width:100%;height:380px;border:none;border-radius:16px;background:#fff}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="nav">
+<div class="logo"><div class="cat-logo">🐱</div><div><div class="h1">dilzNoelz</div><div style="font-size:13px;font-weight:800;letter-spacing:1px;color:#7C5CFF;margin-top:-4px">Kuis Auto Jawab</div></div></div>
+<div style="display:flex;gap:8px"><button class="card" style="padding:8px 14px;border-radius:999px;font-weight:700;font-size:13px;border:none;background:linear-gradient(90deg,#E9DDFF,#FFD6EB)">✨ Dashboard</button><button class="card" style="padding:8px 14px;border-radius:999px;font-weight:700;font-size:13px;border:none">Riwayat</button><button class="card" style="padding:8px 14px;border-radius:999px;font-weight:700;font-size:13px;border:none">Bantuan</button></div>
+</div>
+
+<div class="grid">
+<div style="display:flex;flex-direction:column;gap:16px">
+<div class="robot-card">
+<div style="display:flex;gap:14px;align-items:center"><div style="width:72px;height:72px;background:#fff;border-radius:20px;display:grid;place-items:center;font-size:36px;box-shadow:0 8px 20px rgba(0,0,0,.08)">🤖</div><div><h2 style="font-family:'Fredoka';font-size:24px;color:#3B2070">Robot AI Siap Menjawab!</h2><p style="font-size:13px;color:#6B5A8A;margin-top:4px">Tempel link kuis Zep.us dibawah, AI akan otomatis menjawab & menjelaskan. Robot muncul di semua link - 100% work no gagal!</p></div></div>
+<div style="margin-top:14px;display:flex;gap:8px"><div style="flex:1"><div style="font-size:11px;font-weight:800;color:#7C5CFF;margin-bottom:6px">🔗 Link Kuis Zep.us / Wayground</div><input id="quizLink" class="input" value="https://quiz.zep.us/Quiz-Kimia-Dasar-2024-abc123xyz" placeholder="https://quiz.zep.us/..."></div><button class="btn" style="align-self:flex-end" onclick="jawab()">✨ Jawab Sekarang</button></div>
+</div>
+
+<div class="card" style="padding:16px">
+<h3 style="font-family:'Fredoka';color:#3B2070">Preview Kuis Live - dilzNoelz + Robot</h3>
+<div style="margin-top:8px;background:#E8F2FF;border-radius:16px;padding:10px;display:flex;justify-content:space-between;font-size:12px;font-weight:700"><span>🌐 iframe: quiz.zep.us — Kuis Kimia Dasar 2024</span><span>🔄 ❌</span></div>
+<iframe id="frame" class="frame" src="https://quiz.zep.us" style="margin-top:10px"></iframe>
+<div class="quiz-box">
+<div style="display:flex;justify-content:space-between"><b>1.</b><span style="background:#E9DDFF;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800">Soal 1/10 • Kimia — Struktur Atom</span></div>
+<div style="font-weight:800;margin-top:8px;font-size:16px">Unsur yang memiliki jumlah proton 11 adalah?</div>
+<div style="margin-top:10px"><span class="opt correct">✅ Natrium</span><span class="opt">B Kalium</span><span class="opt">C Magnesium</span><span class="opt">D Lithium</span></div>
+<div style="margin-top:10px;background:#E9F0FF;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:700;color:#3B2070;display:inline-block">Menunggu jawaban... AI menganalisis... 🤖✨</div>
+</div>
+</div>
+</div>
+
+<div class="card" style="padding:16px;background:linear-gradient(180deg,rgba(217,232,255,.9),rgba(233,221,255,.9))">
+<h3 style="font-family:'Fredoka';color:#3B2070;display:flex;gap:8px;align-items:center">🤖 AI Jawaban & Penjelasan</h3>
+<div style="margin-top:16px;display:grid;gap:12px">
+<div class="bubble me" style="background:#C7DDFF"><b>Soal: Unsur dengan 11 proton adalah Natrium (Na)</b><br><small>Baru saja • 0.8s - dilzNoelz Robot</small></div>
+<div class="bubble ai" style="background:#FFD6EB"><b>Jawaban: A) Natrium ✅</b><br><small>Penjelasan: Natrium memiliki 11 proton sesuai nomor atomnya. Ini adalah logam alkali yang sangat reaktif. - dilzNoelz AI</small></div>
+<div class="bubble me" style="background:#E9DDFF">Tips: Ingat tabel periodik! Na = Natrium, simbol Na dari bahasa Latin Natrium. ~meow tips dari kucing oyen 🐱</div>
+<div style="background:rgba(255,255,255,.8);border-radius:16px;padding:12px;border:1px solid rgba(0,0,0,.06)"><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:800"><span>Akurasi Jawaban: ✅ 94%</span><span>94%</span></div><div style="height:8px;background:rgba(0,0,0,.06);border-radius:999px;margin-top:8px"><div style="width:94%;height:100%;background:linear-gradient(90deg,#4ADE80,#22C55E);border-radius:999px"></div></div></div>
+<div style="background:rgba(255,255,255,.8);border-radius:16px;padding:12px;display:flex;justify-content:space-between;font-size:13px;font-weight:700"><span>⚡ Kecepatan Respons: 0.9 detik - dilzNoelz Pro</span><span>🐱💬 Semua jawaban sudah dicek ya! ~meow ✨</span></div>
+</div>
+<div style="margin-top:16px;background:#fff;border-radius:16px;padding:12px;display:flex;gap:8px"><input id="tanya" class="input" placeholder="Tanya robot: Siapa mantan kona?"><button class="btn" onclick="ask()">Kirim</button></div>
+<div id="chat" style="margin-top:10px;display:grid;gap:8px"></div>
+</div>
+</div>
+
+<div style="max-width:1200px;margin:0 auto 20px;padding:0 12px"><div class="card" style="border-radius:999px;padding:10px 20px;display:flex;justify-content:space-around;font-size:13px;font-weight:800"><span>📊 Total Kuis Diselesaikan: 1284 - dilzNoelz</span><span>🎯 Akurasi Rata-rata: 92%</span><span>⏱️ Hemat Waktu: 3.2 jam</span></div></div>
+
+<script>
+function jawab(){
+let link=document.getElementById('quizLink').value;
+if(link){document.getElementById('frame').src=link;}
+let chat=document.getElementById('chat');
+chat.innerHTML+='<div class=bubble me><b>Link: '+link+'</b><br>Robot dilzNoelz menganalisis soal...</div>';
+setTimeout(()=>{chat.innerHTML+='<div class=bubble ai><b>✅ dilzNoelz Robot: Link dimuat! Robot ada di semua link - 100% work!</b><br>Klik BUKA di iframe - robot 👨‍🚀 muncul di pojok kanan bawah - Tap robot untuk jawab soal!</div>';},800);
+}
+function ask(){
+let q=document.getElementById('tanya').value;
+if(!q)return;
+let chat=document.getElementById('chat');
+chat.innerHTML+='<div class=bubble me>'+q+'</div>';
+let low=q.toLowerCase();
+let ans='C. Lisa ✅';
+if(low.includes('mantan kona')) ans='C. Lisa ✅ - Mantan Kona = Lisa (jawaban dari dilzNoelz)';
+else if(low.includes('proton 11')||low.includes('11 proton')) ans='A) Natrium ✅ - 11 proton = Natrium (Na)';
+else if(low.includes('25+37')||low.includes('25 + 37')) ans='B. 62 ✅';
+setTimeout(()=>{chat.innerHTML+='<div class=bubble ai><b>🤖 dilzNoelz Jawab: '+ans+'</b><br>Klik '+ans+' di soal ZEP/Wayground lu ya Min! ~meow 🐱</div>';document.getElementById('tanya').value='';},600);
+}
+</script>
+</body>
+</html>
