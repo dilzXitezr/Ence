@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nanparak - Gojo Six Eyes - Anti Gagal - by dilzNoeltz</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#02060e;color:#e6f0ff;font-family:system-ui;min-height:100vh}
+#loginScreen{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:flex-end;padding:20px;background:#02060e}
+.bg{position:absolute;inset:0;background:radial-gradient(800px 600px at 30% 30%,rgba(107,168,255,.25),transparent),linear-gradient(180deg,#0a1933,#02060e)}
+.bg::before{content:'👁️';position:absolute;left:10%;top:15%;font-size:280px;opacity:.12;filter:blur(1px)}
+.loginPanel{position:relative;z-index:2;width:100%;max-width:420px;background:linear-gradient(180deg,rgba(8,22,48,.94),rgba(6,16,36,.98));backdrop-filter:blur(28px);border:1px solid rgba(107,168,255,.25);border-radius:22px;padding:24px;box-shadow:0 20px 80px rgba(0,0,0,.7)}
+.logo{font-size:48px;font-weight:800;background:linear-gradient(90deg,#8ec5ff,#4a9bff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.input{width:100%;padding:14px 14px 14px 42px;border-radius:12px;background:rgba(5,16,36,.85);border:1px solid rgba(107,168,255,.22);color:#fff;outline:none;margin-top:12px;font-size:13px}
+.btn{width:100%;padding:14px;border-radius:12px;background:linear-gradient(90deg,#6bb0ff,#3a8cff);border:none;color:#00122e;font-weight:800;font-size:16px;cursor:pointer;margin-top:12px}
+.btn2{width:100%;padding:12px;border-radius:12px;background:rgba(255,80,80,.12);border:1px solid rgba(255,80,80,.3);color:#ff8a8a;font-weight:700;cursor:pointer;margin-top:8px}
+#app{display:none;min-height:100vh;background:#02060e;padding:12px}
+</style>
+</head>
+<body>
+
+<div id="loginScreen">
+<div class="bg"></div>
+<div class="loginPanel">
+<div class="logo">nanparak</div>
+<div style="font-size:13px;color:#8aa0c2">Welcome Back • Login to your account</div>
+<div style="margin-top:18px;padding:10px;border-radius:12px;background:rgba(107,168,255,.06);border:1px solid rgba(107,168,255,.12)">🔒 <b>Six Eyes</b> • Secure Access • Gojo Edition</div>
+
+<div style="position:relative;margin-top:16px"><span style="position:absolute;left:12px;top:50%;transform:translateY(-50%)">👤</span><input id="user" class="input" value="dilzNoelz" placeholder="Username or Email — BEBAS APA AJA — Pasti Bisa Masuk"></div>
+<div style="position:relative;margin-top:8px"><span style="position:absolute;left:12px;top:50%;transform:translateY(-50%)">🔒</span><input id="pass" class="input" type="password" value="nanparak123" placeholder="Password — BEBAS APA AJA — Pasti Bisa Masuk"></div>
+
+<button class="btn" onclick="masuk()">⚡ LOGIN — PASTI BISA MASUK 100%</button>
+<button class="btn2" onclick="masukDarurat()">🚨 Masuk Darurat — Klik Ini Kalau Gagal — Pasti Masuk!</button>
+
+<div style="margin-top:12px;background:rgba(5,14,32,.7);border:1px solid rgba(107,168,255,.18);border-radius:12px;padding:10px;display:flex;gap:10px;font-size:11px"><div>🎵</div><div style="flex:1">Now Playing: akumilikmu — auto<br><div style="height:3px;background:rgba(107,168,255,.15);margin-top:4px"><div style="width:38%;height:100%;background:#6bb0ff"></div></div></div><div>0:32 / 2:41</div></div>
+
+<div style="margin-top:10px;font-size:10px;color:#5a7599;text-align:center">by dilzNoeltz • v2.1.0 • Secure • ©2024 nanparak<br>✅ Username & Password BEBAS — Gak Mungkin Gagal — Garansi!</div>
+</div>
+</div>
+
+<div id="app">
+<div style="background:rgba(10,22,44,.8);border-bottom:1px solid rgba(107,168,255,.12);padding:12px;display:flex;justify-content:space-between"><b>nanparak • by dilzNoeltz • Masuk 100% ✅</b><span id="userShow">dilzNoelz</span></div>
+<div style="max-width:1000px;margin:0 auto;padding:12px">
+<div style="background:rgba(10,22,44,.7);border:1px solid rgba(107,168,255,.14);border-radius:16px;padding:14px"><b>🎵 Musik Otomatis: akumilikmu ✅</b><audio id="audio" autoplay loop controls style="width:100%;margin-top:8px"></audio></div>
+<div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px"><div style="background:rgba(10,22,44,.7);border-radius:12px;padding:12px">☀️ 31° / ❄️ 18°<br>Cuaca ✅</div><div style="background:rgba(10,22,44,.7);border-radius:12px;padding:12px">🔋 74% Charging<br>Baterai ✅</div><div style="background:rgba(10,22,44,.7);border-radius:12px;padding:12px">👤 dilzNoelz<br>Profil ✅</div></div>
+<div style="margin-top:10px;background:rgba(10,22,44,.7);border-radius:16px;padding:14px"><b>💬 Chat Ber 3 + Stiker/Emoji ⚡ — Bisa Ngobrol 100% ✅</b><div id="chatBox" style="height:200px;overflow:auto;background:rgba(6,16,36,.6);border-radius:10px;padding:8px;margin-top:8px"><div style="padding:8px;background:rgba(18,34,64,.8);border-radius:12px;margin-bottom:6px"><b>ainan:</b> min udah bisa masuk — Gojo keren 😍</div><div style="padding:8px;background:linear-gradient(90deg,#6bb0ff,#3a8cff);color:#00122e;border-radius:12px;align-self:flex-end"><b>dilzNoelz:</b> ini versi anti gagal Min! ⚡</div></div><div style="display:flex;gap:6px;margin-top:8px"><input id="chatIn" style="flex:1;padding:10px;border-radius:10px;background:#0a1933;border:1px solid rgba(107,168,255,.15);color:#fff" placeholder="Ketik..."><button onclick="let i=document.getElementById('chatIn');if(i.value){document.getElementById('chatBox').innerHTML+=`<div style=padding:8px;background:linear-gradient(90deg,#6bb0ff,#3a8cff);color:#00122e;border-radius:12px;margin-top:6px><b>${document.getElementById('userShow').innerText}:</b> ${i.value}</div>`;i.value='';document.getElementById('chatBox').scrollTop=9999}" style="padding:10px 16px;border-radius:10px;background:#fff;color:#000;border:none;font-weight:800">Kirim</button></div></div>
+<div style="text-align:center;padding:16px;color:#5a7599;font-size:10px">✅ GARANSI 100% BISA MASUK — Username & Password Bebas — Semua Tombol Bisa Di Pencet — by dilzNoeltz</div>
+</div>
+</div>
+
+<script>
+function masuk(){
+let u=document.getElementById('user').value.trim() || 'dilzNoelz';
+document.getElementById('loginScreen').style.display='none';
+document.getElementById('app').style.display='block';
+document.getElementById('userShow').innerText=u;
+let a=document.getElementById('audio');
+a.src='https://cdn.pixabay.com/audio/2022/10/30/audio_8ef06a37a0.mp3';
+a.volume=0.6;
+a.play().catch(()=>{});
+}
+function masukDarurat(){
+document.getElementById('loginScreen').style.display='none';
+document.getElementById('app').style.display='block';
+document.getElementById('userShow').innerText='dilzNoelz';
+let a=document.getElementById('audio');
+a.src='https://cdn.pixabay.com/audio/2022/10/30/audio_8ef06a37a0.mp3';
+a.play().catch(()=>{});
+alert('✅ Masuk Darurat Berhasil Min! — Garansi 100% — Gak Gagal!');
+}
+</script>
+</body>
+</html>
