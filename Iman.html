@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nanparak - LANGSUNG MASUK - NO CLICK</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#060607;color:#fff;font-family:system-ui}
+.banner{background:linear-gradient(90deg,#111,#222);border-bottom:1px solid #333;padding:12px;text-align:center;position:sticky;top:0;z-index:10}
+.logo{font-size:28px;font-weight:800}
+.container{max-width:1100px;margin:0 auto;padding:12px}
+.card{background:#121214;border:1px solid #222;border-radius:16px;padding:14px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.tool-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px}
+.tool{background:#1A1A1E;border:1px solid #222;border-radius:12px;padding:10px;text-align:center}
+.input{width:100%;padding:10px;border-radius:10px;background:#1A1A1E;border:1px solid #333;color:#fff}
+@media(max-width:700px){.grid3{grid-template-columns:1fr}.tool-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="banner">
+<div class="logo">nanparak — Raka • Ainan • dilzNoelz</div>
+<div style="font-size:11px;color:#888;margin-top:2px">✅ VERSI INI LANGSUNG MASUK - GAK PERLU KLIK TOMBOL - SCROLL KE BAWAH UNTUK FITUR</div>
+</div>
+
+<div class="container">
+
+<div style="background:#fff;color:#000;padding:10px;border-radius:12px;text-align:center;font-weight:800;margin-bottom:10px">✅ LANGSUNG MASUK 100% - INI VERSI TANPA TOMBOL - SEMUA FITUR ADA DI BAWAH - SCROLL AJA!</div>
+
+<div class="grid3">
+<div class="card"><small style="color:#888;font-size:9px">CUACA PANAS/DINGIN ✅</small><div style="font-size:28px;font-weight:800" id="temp">31° ☀️</div><div style="font-size:11px;color:#888">Panas • Cerah • Cianjur</div><button onclick="document.getElementById('temp').innerText=document.getElementById('temp').innerText.includes('31')?'18° ❄️':'31° ☀️'" style="width:100%;margin-top:8px;padding:8px;border-radius:999px;background:#222;color:#fff;border:none;font-size:11px">Ganti ❄️/☀️</button></div>
+<div class="card"><small style="color:#888;font-size:9px">BATERAI ✅</small><div style="font-size:18px;font-weight:800" id="bat">74% • Charging</div><div style="height:6px;background:#222;border-radius:999px;margin-top:6px"><div style="height:100%;width:74%;background:#fff;border-radius:999px"></div></div></div>
+<div class="card"><small style="color:#888;font-size:9px">JAM + STREAK</small><div id="clock" style="font-size:24px;font-weight:800">12:00:00</div><div style="font-size:11px;color:#888">🔥 Streak 128 hari</div></div>
+</div>
+
+<div class="grid3">
+<div class="card"><b>Raka</b><br><small style="color:#888">Admin • Online • 31° ✅</small></div>
+<div class="card"><b>Ainan</b><br><small style="color:#888">Editor • Online • 18° ✅</small></div>
+<div class="card"><b>dilzNoelz</b><br><small style="color:#888">Owner • Online • HD ✅</small></div>
+</div>
+
+<div class="card">
+<b>🛠️ TOOLS - 12 FITUR - LANGSUNG BISA DI KLIK - GAK PERLU MASUK</b>
+<div class="tool-grid" style="margin-top:10px">
+<div class="tool" onclick="alert('SSTikTok - Paste link TikTok - Download tanpa watermark - Khusus ber 3')">🎵<br><b style="font-size:10px">SSTikTok ✅</b></div>
+<div class="tool" onclick="document.getElementById('up').click()">✨<br><b style="font-size:10px">HD/Estetik ✅</b></div>
+<div class="tool" onclick="alert('Editan - B&W Ink kayak video mata lu + Vintage + Neon')">🎨<br><b style="font-size:10px">Editan ✅</b></div>
+<div class="tool" onclick="alert('Hapus BG - Upload foto - BG hilang')">🖼️<br><b style="font-size:10px">Hapus BG</b></div>
+<div class="tool">🎧<br><b style="font-size:10px">Musik X</b></div>
+<div class="tool">🔥<br><b style="font-size:10px">Streak</b></div>
+<div class="tool">📸<br><b style="font-size:10px">Memori</b></div>
+<div class="tool">🔒<br><b style="font-size:10px">Secret X</b></div>
+</div>
+<input type="file" id="up" hidden accept="image/*" onchange="let c=document.getElementById('c');c.style.display='block';let i=new Image();i.onload=()=>{c.width=i.width;c.height=i.height;c.getContext('2d').drawImage(i,0,0)};i.src=URL.createObjectURL(this.files[0])">
+<div style="margin-top:10px"><canvas id="c" style="width:100%;max-height:300px;border-radius:12px;display:none;background:#111"></canvas><div style="margin-top:6px;display:flex;gap:6px"><button onclick="let c=document.getElementById('c');let x=c.getContext('2d').getImageData(0,0,c.width,c.height);for(let i=0;i<x.data.length;i+=4){let v=0.3*x.data[i]+0.59*x.data[i+1]+0.11*x.data[i+2];x.data[i]=x.data[i+1]=x.data[i+2]=v;}x.data&&c.getContext('2d').putImageData(x,0,0)" style="flex:1;padding:8px;border-radius:999px;background:#222;color:#fff;border:none;font-size:11px">B&W Ink</button><button onclick="let a=document.createElement('a');a.href=document.getElementById('c').toDataURL();a.download='nanparak-HD.png';a.click()" style="flex:1;padding:8px;border-radius:999px;background:#fff;color:#000;border:none;font-size:11px">Download HD</button></div></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1.2fr.8fr;gap:10px">
+<div class="card"><b>💬 Chat Khusus Ber 3 ✅</b><div id="chatBox" style="height:200px;overflow:auto;background:#1A1A1E;border:1px solid #222;border-radius:10px;padding:8px;margin-top:8px;display:flex;flex-direction:column;gap:6px"><div style="padding:8px 10px;border-radius:12px;background:#2A2A2E;font-size:12px"><b>ainan:</b> min yang bisa masuk dong</div><div style="padding:8px 10px;border-radius:12px;background:#fff;color:#000;align-self:flex-end;font-size:12px"><b>raka:</b> ini versi langsung masuk Min
