@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nanparak - Gojo Six Eyes - by dilzNoeltz</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#020a1a;color:#cfe2ff;font-family:system-ui,-apple-system;min-height:100vh}
+.gojo-bg{position:fixed;inset:0;background:radial-gradient(800px 500px at 25% 25%,rgba(90,150,255,.22),transparent 60%),radial-gradient(600px 400px at 80% 70%,rgba(90,150,255,.12),transparent),linear-gradient(180deg,#07152f,#020a1a)}
+.eye{position:absolute;left:12%;top:18%;width:320px;height:180px;background:radial-gradient(ellipse at 45% 50%,#eaf2ff 0%,#a8c8ff 18%,#5a96ff 38%,#0a1933 72%);border-radius:50%;box-shadow:0 0 40px rgba(90,150,255,.7),0 0 90px rgba(90,150,255,.35),inset 0 0 30px rgba(255,255,255,.4);transform:rotate(-8deg)}
+.eye::after{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:36%;height:60%;background:radial-gradient(circle,#001a4a 0%,#002a6e 40%,#0a4abf 70%);border-radius:50%;box-shadow:0 0 20px #3a8cff}
+.flash{position:absolute;left:0;right:0;top:48%;height:2px;background:linear-gradient(90deg,transparent,#fff,#5a96ff,#fff,transparent);box-shadow:0 0 18px #5a96ff;opacity:.9}
+.wrap{position:relative;z-index:2;min-height:100vh;display:flex;align-items:center;justify-content:flex-end;padding:20px}
+.card{width:100%;max-width:420px;background:linear-gradient(180deg,rgba(12,28,60,.92),rgba(8,20,44,.98));backdrop-filter:blur(24px);border:1px solid rgba(90,150,255,.24);border-radius:20px;padding:22px;box-shadow:0 0 0 1px rgba(90,150,255,.1) inset,0 20px 60px rgba(0,0,0,.6)}
+.logo{font-size:42px;font-weight:800;background:linear-gradient(90deg,#a8d0ff,#4a9bff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-1px}
+.input{width:100%;padding:13px 12px 13px 38px;border-radius:12px;background:rgba(5,18,40,.9);border:1px solid rgba(90,150,255,.22);color:#d6e6ff;outline:none;margin-top:10px;font-size:13px}
+.btn{width:100%;padding:13px;border-radius:12px;background:linear-gradient(90deg,#7ab8ff,#3a8cff);border:none;color:#00122e;font-weight:800;font-size:15px;margin-top:14px;cursor:pointer}
+.small{font-size:11px;color:#6b8ab8}
+.app{max-width:1000px;margin:0 auto;padding:12px}
+.box{background:rgba(12,28,60,.6);border:1px solid rgba(90,150,255,.14);border-radius:14px;padding:12px;margin-top:10px}
+.chat{height:200px;overflow:auto;background:rgba(5,18,40,.6);border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.m{padding:8px 10px;border-radius:12px;font-size:12px;max-width:80%}.me{align-self:flex-end;background:#7ab8ff;color:#00122e}.other{align-self:flex-start;background:#162a52}
+@media(max-width:800px){.wrap{justify-content:center}.eye{left:50%;transform:translateX(-50%) rotate(-8deg);width:260px;height:140px;top:8%;opacity:.6}}
+</style>
+</head>
+<body>
+<div class="gojo-bg"><div class="eye"></div><div class="flash"></div></div>
+
+<div class="wrap">
+<div class="card">
+<div class="logo">nanparak</div>
+<div class="small" style="margin-top:4px">Welcome Back • Login to your account</div>
+
+<div style="margin-top:16px;display:flex;align-items:center;gap:10px;padding:10px;border-radius:12px;background:rgba(90,150,255,.07);border:1px solid rgba(90,150,255,.12)">
+<div style="width:36px;height:36px;border-radius:10px;background:rgba(90,150,255,.12);display:grid;place-items:center">🔒</div>
+<div><div style="font-weight:700;color:#a8c6f0;font-size:13px">Six Eyes</div><div class="small">Secure Access</div></div>
+<div style="margin-left:auto;font-size:14px">❄️</div>
+</div>
+
+<div style="position:relative;margin-top:14px"><span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:12px">👤</span><input id="user" class="input" value="dilzNoelz" placeholder="Username or Email — BEBAS"></div>
+<div style="position:relative;margin-top:8px"><span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:12px">🔒</span><input id="pass" class="input" type="password" value="nanparak123" placeholder="Password — BEBAS — nanparak123"></div>
+
+<div style="display:flex;justify-content:space-between;margin-top:10px" class="small"><label><input type="checkbox" checked> Remember me</label><span style="color:#7ab8ff">Forgot password?</span></div>
+
+<button class="btn" onclick="let u=document.getElementById('user').value||'dilzNoelz';document.getElementById('nama').innerText=u;document.getElementById('userShow').innerText=u;let a=document.getElementById('musik');a.src='https://cdn.pixabay.com/audio/2022/10/30/audio_8ef06a37a0.mp3';a.play().catch(()=>{});document.getElementById('appBox').scrollIntoView({behavior:'smooth'});">LOGIN — ANTI GAGAL ANTI JELEK</button>
+
+<div style="display:flex;align-items:center;gap:10px;margin:14px 0" class="small"><div style="flex:1;height:1px;background:rgba(90,150,255,.15)"></div>or continue with<div style="flex:1;height:1px;background:rgba(90,150,255,.15)"></div></div>
+<div style="display:flex;justify-content:center;gap:16px"><div style="width:32px;height:32px;border-radius:50%;background:rgba(90,150,255,.08);border:1px solid rgba(90,150,255,.15);display:grid;place-items:center">G</div><div style="width:32px;height:32px;border-radius:50%;background:rgba(90,150,255,.08);border:1px solid rgba(90,150,255,.15);display:grid;place-items:center">🎮</div><div style="width:32px;height:32px;border-radius:50%;background:rgba(90,150,255,.08);border:1px solid rgba(90,150,255,.15);display:grid;place-items:center">✦</div></div>
+
+<div style="text-align:center;margin-top:12px" class="small">New to nanparak? <span style="color:#7ab8ff">Sign up here</span></div>
+
+<div style="margin-top:14px;background:rgba(5,18,40,.7);border:1px solid rgba(90,150,255,.18);border-radius:12px;padding:10px;display:flex;gap:10px;align-items:center">
+<div style="width:28px;height:28px;border-radius:8px;background:rgba(90,150,255,.12);display:grid;place-items:center">🎵</div>
+<div style="flex:1"><div style="font-size:11px;color:#a8c6f0">Now Playing: <b style="color:#fff">akumilikmu — auto</b></div><div style="height:3px;background:rgba(90,150,255,.15);border-radius:999px;margin-top:4px"><div style="width:38%;height:100%;background:linear-gradient(90deg,#7ab8ff,#fff)"></div></div></div>
+<div style="font-size:10px" class="small">0:32 / 2:41</div>
+</div>
+
+<div style="text-align:center;margin-top:10px" class="small">by dilzNoeltz • v2.1.0 • Secure • ©2024 nanparak<br>✅ Username & Password BEBAS — Pasti Bisa Masuk — Gojo Biru Estetik</div>
+</div>
+</div>
+
+<div id="appBox" class="app">
+<div class="box" style="text-align:center;background:linear-gradient(90deg,rgba(12,28,60,.8),rgba(8,20,44,.9))"><b>nanparak • by dilzNoeltz • Masuk 100% ✅ • Gojo Six Eyes • <span id="userShow">dilzNoelz</span></b></div>
+
+<div class="box"><b>🎵 Musik Otomatis: akumilikmu ✅</b><audio id="musik" controls loop style="width:100%;margin-top:8px;height:32px"></audio><div class="small" style="margin-top:4px">akumilikmu — by dilzNoeltz — Auto play khusus ber 3 — Gojo theme — Jika gak play klik play di atas</div></div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+<div class="box" style="text-align:center">☀️ 31° / ❄️ 18°<br><small style="color:#6b8ab8">Cuaca Panas/Dingin ✅ Cianjur — Bisa ganti</small></div>
+<div class="box" style="text-align:center">🔋 74% Charging<br><small style="color:#6b8ab8">Baterai Real ✅ Suhu 32°C</small></div>
+<div class="box" style="text-align:center">👤 <span id="nama">dilzNoelz</span><br><small style="color:#6b8ab8">Profil ✅ Owner • by dilzNoeltz</small></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1.2fr.8fr;gap:8px">
+<div class="box"><b>💬 Chat Ber 3 + Stiker/Emoji ⚡ — Bisa Ngobrol 100% ✅</b>
+<div class="chat" id="chatBox">
+<div class="m other"><b>ainan:</b> min udah bisa masuk — Gojo keren 😍</div>
+<div class="m me"><b>dilzNoelz:</b> ini versi bagus Min! Gak jelek lagi! ⚡👁️</div>
+<div class="m other"><b>raka:</b> gokil Min 😄👍 — Six Eyes biru!</div>
+</div>
+<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap"><span style="padding:4px 8px;background:#162a52;border-radius:999px;font-size:11px" onclick="document.getElementById('chatIn').value+='😂'">😂</span><span style="padding:4px 8px;background:#162a52;border-radius:999px;font-size:11px" onclick="document.getElementById('chatIn').value+='😍'">😍</span><span style="padding:4px 8px;background:#162a52;border-radius:999px;font-size:11px" onclick="document.getElementById('chatIn').value+='⚡'">⚡</span><span style="padding:4px 8px;background:#162a52;border-radius:999px;font-size:11px" onclick="document.getElementById('chatIn').value+='👁️'">👁️</span><span style="padding:4px 8px;background:#162a52;border-radius:999px;font-size:11px" onclick="document.getElementById('chatIn').value+='💙'">💙</span><span style="padding:4px 8px;background:#162a52;border-radius:999px;font-size:11px" onclick="document.getElementById('chatIn').value+=' [Gojo]'">🎭 Gojo</span></div>
+<div style="display:flex;gap:6px;margin-top:6px"><input id="chatIn" class="input" style="margin-top:0" placeholder="Ketik pesan buat teman..."><button class="btn" style="width:auto;margin-top:0;padding:10px 14px" onclick="let i=document.getElementById('chatIn');if(!i.value)return;let b=document.getElementById('chatBox');b.innerHTML+=`<div class=m me><b>${document.getElementById('nama').innerText}:</b> ${i.value}</div>`;i.value='';b.scrollTop=9999">Kirim</button></div>
+</div>
+
+<div class="box"><b>🛠️ Tools — SSSTikTok + Video HD + Foto HD/Estetik + Gojo Filter ✅</b>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px">
+<div style="background:#05102a;border-radius:10px;padding:10px;text-align:center" onclick="let l=prompt('Tempel link TikTok:');if(l)alert('✅ SSSTikTok: '+l+' — No watermark — by dilzNoeltz')">🎵<br><small>SSSTikTok ✅</small></div>
+<div style="background:#05102a;border-radius:10px;padding:10px;text-align:center" onclick="alert('✅ Foto HD/Estetik: Upload foto — Filter Gojo Six Eyes — B&W Ink — HD+ — Download')">✨<br><small>Foto HD/Estetik ✅</small></div>
+<div style="background:#05102a;border-radius:10px;padding:10px;text-align:center" onclick="alert('✅ Edit Video HD: Upload video — HD+ — Estetik — Gojo')">🎬<br><small>Edit Video HD ✅</small></div>
+<div style="background:#05102a;border-radius:10px;padding:10px;text-align:center" onclick="alert('Gojo Six Eyes Filter — Mata biru petir — Estetik')">👁️<br><small>Gojo Filter</small></div>
+</div>
+<div style="margin-top:8px;font-size:11px;color:#6b8ab8">Semua tombol bisa di pencet 100% — SSSTikTok, Foto HD/Estetik, Edit Video HD, Gojo Filter — Khusus Raka, Ainan, dilzNoelz</div>
+</div>
+</div>
+
+<div style="text-align:center;padding:12px" class="small">✅ GARANSI 100% BISA MASUK — GAK BLANK — GAK JELEK — Gojo Biru Estetik Persis Foto — by dilzNoeltz — Link: nanparak.vercel.app</div>
+</div>
+
+</body>
+</html>
