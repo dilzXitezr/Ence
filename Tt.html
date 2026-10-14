@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nanparak - Gojo Six Eyes - by dilzNoeltz</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#02060e;color:#e6f0ff;font-family:system-ui;min-height:100vh}
+#loginScreen{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:flex-end;padding:24px;background:#02060e}
+.bg{position:absolute;inset:0}
+.bg img{width:100%;height:100%;object-fit:cover;object-position:28% center;filter:brightness(0.8)}
+.bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,6,14,.2) 0%,rgba(2,6,14,.9) 100%)}
+.loginPanel{position:relative;z-index:2;width:100%;max-width:440px;background:linear-gradient(180deg,rgba(8,22,48,.92),rgba(6,16,36,.96));backdrop-filter:blur(28px);border:1px solid rgba(107,168,255,.25);border-radius:22px;padding:26px}
+.logo{font-size:52px;font-weight:700;background:linear-gradient(90deg,#8ec5ff,#4a9bff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.btnLogin{width:100%;margin-top:18px;padding:14px;border-radius:12px;background:linear-gradient(90deg,#6bb0ff,#3a8cff);border:none;color:#00122e;font-weight:800;font-size:16px;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="loginScreen">
+<div class="bg"><img src="https://i.imgur.com/3QZQ0eF.jpeg" alt="gojo"></div>
+<div class="loginPanel">
+<div style="font-size:52px;font-weight:700;background:linear-gradient(90deg,#8ec5ff,#4a9bff);-webkit-background-clip:text;-webkit-text-fill-color:transparent">nanparak</div>
+<div style="font-size:13px;color:#8aa0c2">Welcome Back • Login to your account</div>
+<div style="margin-top:22px;padding:12px;border-radius:12px;background:rgba(107,168,255,.06);border:1px solid rgba(107,168,255,.12);display:flex;gap:10px"><div>🔒</div><div><b>Six Eyes</b><br><small>Secure Access</small></div></div>
+<input id="user" style="width:100%;padding:14px 14px 14px 42px;border-radius:12px;background:rgba(5,16,36,.85);border:1px solid rgba(107,168,255,.22);color:#fff;margin-top:18px" value="dilzNoelz" placeholder="Username or Email">
+<input id="pass" style="width:100%;padding:14px 14px 14px 42px;border-radius:12px;background:rgba(5,16,36,.85);border:1px solid rgba(107,168,255,.22);color:#fff;margin-top:12px" type="password" value="nanparak123" placeholder="Password">
+<button class="btnLogin" onclick="document.getElementById('loginScreen').style.display='none';document.getElementById('app').style.display='block'">LOGIN</button>
+<div style="margin-top:18px;text-align:center;font-size:12px;color:#5a7599">or continue with • G 🎮 ✦</div>
+<div style="margin-top:18px;background:rgba(5,14,32,.7);border:1px solid rgba(107,168,255,.18);border-radius:12px;padding:10px;display:flex;gap:10px"><div>🎵</div><div style="flex:1"><div style="font-size:11px">Now Playing: akumilikmu — auto</div><div style="height:3px;background:rgba(107,168,255,.15);margin-top:4px"><div style="width:38%;height:100%;background:linear-gradient(90deg,#6bb0ff,#fff)"></div></div></div><div style="font-size:10px">0:32 / 2:41</div></div>
+</div>
+<div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:#5a7599">by dilzNoeltz • v2.1.0 • Secure • ©2024 nanparak</div>
+</div>
+<div id="app" style="display:none;min-height:100vh;background:#02060e;padding:20px"><h2>nanparak • by dilzNoeltz • Masuk 100% ✅</h2><p>Musik akumilikmu auto play • Chat + Baterai + Cuaca + Profil + SSSTikTok + Video HD + Foto HD/Estetik • Semua tombol bisa di pencet</p></div>
+</body>
+</html>
