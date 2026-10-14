@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nanparak - Like Photo</title>
+<style>
+:root{--bg:#08080A;--card:#121214;--card2:#1C1C1F;--border:rgba(255,255,255,.08)}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:#fff;font-family:system-ui}
+#eyeCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.top{height:88px;background:#0E0E0F;border:1px solid var(--border);border-radius:16px;margin:10px;display:flex;justify-content:space-between;align-items:center;padding:0 18px}
+.main{display:grid;grid-template-columns:280px 1fr;gap:12px;margin:0 10px 10px}
+.side{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px}
+.tool-card{background:#1A1A1D;border:1px solid var(--border);border-radius:14px;padding:14px}
+.btn{padding:10px 16px;border-radius:999px;background:#fff;color:#000;font-weight:800;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="top"><div style="display:flex;gap:12px;align-items:center"><div style="width:64px;height:40px;background:white;border-radius:50%"></div><b style="font-size:28px">nanparak</b></div><div style="display:flex;gap:10px"><span style="padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.06)">HOT 34°C • COLD -2°C</span><span style="padding:8px 14px;border-radius:999px;background:rgba(34,197,94,.12)">🔋 72%</span></div></div>
+<div class="main">
+<div class="side">
+<b style="font-size:12px;color:#8A8A8E">FRIENDS — 3</b>
+<div style="margin-top:12px"><b>Raka</b> • online<br><b>Ainan</b> • online<br><b>dilzNoelz</b> • typing...</div>
+<div style="margin-top:20px"><b style="font-size:11px">🔒 PRIVATE CHAT — 3</b><div style="background:#1C1C1F;padding:10px;border-radius:12px;margin-top:8px">Private Chat for 3<br><small>Raka: Check this photo edit in tools → HD aesthetic ready</small></div></div>
+</div>
+<div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px"><b>TOOLS — CREATIVE STUDIO</b><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px"><div class="tool-card">sstiktok<br><small>Download & Save TikTok • No Watermark</small><br><button class="btn" style="margin-top:10px;font-size:12px">Open</button></div><div class="tool-card">EDIT<br><small>Photo Edit • Filters • Retouch</small><br><button class="btn" style="margin-top:10px;font-size:12px">Open</button></div><div class="tool-card">HD PHOTO AESTHETIC<br><small>Upscale • Enhance • Horror Aesthetic</small><br><button class="btn" style="margin-top:10px;font-size:12px">Open</button></div></div></div>
+<div style="margin-top:12px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;display:grid;grid-template-columns:1.1fr .9fr;gap:16px"><div><b>INK EYE ANIMATION</b><canvas id="inkEye" style="width:100%;height:220px;background:#E8E8E6;border-radius:12px;margin-top:10px"></canvas></div><div><small>Smoke Density: 78%<br>Drip Intensity: 62%</small><br><button class="btn" style="margin-top:12px;width:100%">▶ Play Animation</button></div></div>
+</div>
+</div>
+<script>
+// Eye animation - tidak nutupin tombol - pointer-events:none
+const c=document.getElementById('inkEye');const ctx=c.getContext('2d');let t=0;
+function draw(){t+=0.016;let w=c.width=300,h=c.height=200;ctx.clearRect(0,0,w,h);ctx.fillStyle='#E8E8E6';ctx.fillRect(0,0,w,h);let x=w/2+Math.sin(t*0.5)*10,y=h/2+Math.cos(t*0.5)*6;ctx.beginPath();ctx.ellipse(x,y,60,36,0,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.strokeStyle='#000';ctx.stroke();ctx.beginPath();ctx.arc(x+Math.sin(t)*4,y+Math.cos(t)*2,18,0,Math.PI*2);ctx.fillStyle='#000';ctx.fill();requestAnimationFrame(draw);}draw();
+</script>
+</body>
+</html>
