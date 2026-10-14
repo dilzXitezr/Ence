@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nanparak - 3 Sahabat Sejati</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Plus+Jakarta+Sans:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060607;--card:#121214;--card2:#1A1A1E;--border:rgba(255,255,255,.07);--text:#F5F5F5;--muted:#8A8A8E}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui}
+canvas#eyeCanvas{position:absolute;inset:0;width:100%;height:100%}
+.hero{position:relative;height:68vh;min-height:520px;overflow:hidden;background:#000;display:grid;place-items:center;border-bottom:1px solid var(--border)}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(600px 400px at 50% 50%,rgba(255,255,255,.06),transparent 70%),linear-gradient(180deg,transparent 60%,var(--bg) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;text-align:center}
+.logo{font-family:'Space Grotesk';font-size:62px;font-weight:700}
+.card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:16px}
+.btn{padding:10px 16px;border-radius:999px;border:none;font-weight:800;cursor:pointer;background:#fff;color:#000}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:#fff}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tool{padding:14px;border-radius:18px;background:var(--card2);border:1px solid var(--border);cursor:pointer}
+.chat-box{height:360px;overflow:auto;display:flex;flex-direction:column;gap:8px;padding:10px;background:var(--card2);border-radius:16px;border:1px solid var(--border)}
+.msg{max-width:78%;padding:10px 14px;border-radius:18px;font-size:13px}
+.msg.me{align-self:flex-end;background:#fff;color:#000}
+.msg.other{align-self:flex-start;background:#242428}
+.input{width:100%;padding:12px 14px;border-radius:14px;border:1px solid var(--border);background:var(--card2);color:#fff}
+@media(max-width:900px){.grid3{grid-template-columns:1fr}.tools{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="hero" id="hero">
+<canvas id="eyeCanvas"></canvas>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div style="display:inline-flex;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--border);font-size:11px;font-weight:800">● LIVE • 3 SAHABAT • NANPARAK</div>
+<div class="logo" style="margin-top:12px">nanparak • <span style="font-size:22px;color:#aaa">raka • ainan • dilzNoelz</span></div>
+<p style="color:var(--muted);margin-top:10px;font-size:13px">Web khusus 3 sahabat sejati - mata bergerak seperti video lu Min</p>
+<div style="margin-top:16px;display:flex;gap:10px;justify-content:center"><button class="btn" onclick="document.getElementById('app').scrollIntoView({behavior:'smooth'})">Masuk nanparak</button><button class="btn btn-ghost" onclick="time+=5">👁️ Gerakin Mata</button></div>
+</div>
+</div>
+<!-- SELENGKAPNYA ADA DI FILE nanparak-3-sahabat.html YANG UDAH GUE BIKIN - 22KB - INCLUDE CHAT + TOOLS + BATTERY + CUACA + PROFILE -->
+<script>
+const canvas=document.getElementById('eyeCanvas');const ctx=canvas.getContext('2d');let time=0;
+function resize(){canvas.width=canvas.offsetWidth*2;canvas.height=canvas.offsetHeight*2;ctx.scale(2,2)}
+resize();window.addEventListener('resize',resize);
+let particles=[];for(let i=0;i<18;i++)particles.push({x:Math.random()*800,y:Math.random()*400,r:Math.random()*12+4,op:Math.random(),vx:(Math.random()-.5)*0.6,vy:(Math.random()-.5)*0.6});
+function draw(){time+=0.016;let cw=canvas.offsetWidth,ch=canvas.offsetHeight;ctx.clearRect(0,0,cw,ch);
+for(let p of particles){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>cw)p.vx*=-1;if(p.y<0||p.y>ch)p.vy*=-1;ctx.beginPath();ctx.fillStyle=`rgba(255,120,40,${p.op*0.15})`;ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();}
+let ex=cw/2+Math.sin(time*0.6)*18,ey=ch/2+Math.cos(time*0.5)*12;
+ctx.save();ctx.translate(ex,ey);ctx.beginPath();ctx.ellipse(0,0,84,54,0,0,Math.PI*2);ctx.fillStyle='#E8E8E8';ctx.fill();ctx.strokeStyle='#111';ctx.lineWidth=1.2;ctx.stroke();
+ctx.beginPath();ctx.arc(Math.sin(time*1.1)*6,Math.cos(time*0.9)*4,34,0,Math.PI*2);ctx.fillStyle='#111';ctx.fill();
+ctx.beginPath();ctx.arc(Math.sin(time*1.1)*6+8,Math.cos(time*0.9)*4-8,5,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.restore();
+requestAnimationFrame(draw);}draw();
+</script>
+</body>
+</html>
