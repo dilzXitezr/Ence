@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nanparak - Gojo Behind Logo 3D - by dilzNoeltz</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#020a1a;color:#cfe2ff;font-family:system-ui;min-height:100vh;overflow-x:hidden}
+.gojo-bg{position:fixed;inset:0;z-index:0}
+.gojo-bg img{width:100%;height:100%;object-fit:cover;object-position:30% 20%;filter:brightness(.55) contrast(1.2) saturate(1.1)}
+.gojo-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(700px 500px at 25% 30%,rgba(90,150,255,.18),transparent 60%),linear-gradient(180deg,rgba(2,10,26,.2),rgba(2,10,26,.95))}
+.behind-logo{position:absolute;left:50%;top:10%;transform:translateX(-50%);width:320px;height:320px;border-radius:50%;overflow:hidden;border:2px solid rgba(90,150,255,.25);box-shadow:0 0 0 8px rgba(90,150,255,.08),0 0 60px rgba(90,150,255,.4);z-index:1;opacity:.9}
+.behind-logo img{width:100%;height:100%;object-fit:cover;object-position:center 5%}
+.wrap{position:relative;z-index:2;min-height:100vh;display:flex;align-items:center;justify-content:flex-end;padding:18px}
+.card{width:100%;max-width:430px;background:linear-gradient(180deg,rgba(10,26,56,.9),rgba(7,18,40,.97));backdrop-filter:blur(24px);border:1px solid rgba(90,150,255,.24);border-radius:22px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.logo-wrap{position:relative}
+.logo{font-size:46px;font-weight:900;background:linear-gradient(90deg,#b6d6ff,#4a9bff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-1.5px;position:relative;z-index:2;text-shadow:0 0 30px rgba(90,150,255,.5)}
+.logo-photo{position:absolute;left:-14px;top:-32px;width:110px;height:110px;border-radius:50%;overflow:hidden;opacity:.38;z-index:1;border:1px solid rgba(90,150,255,.3);box-shadow:0 0 20px rgba(90,150,255,.4)}
+.logo-photo img{width:100%;height:100%;object-fit:cover}
+.input{width:100%;padding:13px 12px 13px 38px;border-radius:12px;background:rgba(5,18,40,.9);border:1px solid rgba(90,150,255,.22);color:#d6e6ff;outline:none;margin-top:10px;font-size:13px}
+.btn{width:100%;padding:13px;border-radius:12px;background:linear-gradient(90deg,#7ab8ff,#3a8cff);border:none;color:#00122e;font-weight:800;font-size:15px;margin-top:14px;cursor:pointer;box-shadow:0 8px 20px rgba(90,150,255,.35)}
+.box{background:rgba(10,26,56,.7);border:1px solid rgba(90,150,255,.14);border-radius:14px;padding:12px;margin-top:10px;position:relative;overflow:hidden}
+.box img.bg-mini{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18;z-index:0}
+.box *{position:relative;z-index:1}
+@media(max-width:800px){.wrap{justify-content:center}.behind-logo{width:240px;height:240px;top:6%;opacity:.6}}
+</style>
+</head>
+<body>
+
+<div class="gojo-bg">
+<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop" alt="gojo" onerror="this.src='https://i.imgur.com/8Km9tLL.jpg'">
+</div>
+<div class="behind-logo">
+<img src="https://i.imgur.com/8Km9tLL.jpg" alt="gojo behind logo" onerror="this.src='https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=600'">
+</div>
+
+<div class="wrap">
+<div class="card">
+<div class="logo-wrap">
+<div class="logo-photo"><img src="https://i.imgur.com/8Km9tLL.jpg" alt="gojo small"></div>
+<div class="logo">nanparak</div>
+</div>
+<div style="font-size:11px;color:#7a9bc7;margin-top:4px">Welcome Back • Gojo Behind Logo • 3D Estetik Jelas • by dilzNoeltz</div>
+
+<div style="margin-top:14px;display:flex;align-items:center;gap:10px;padding:10px;border-radius:12px;background:rgba(90,150,255,.07);border:1px solid rgba(90,150,255,.12)">
+<div style="width:36px;height:36px;border-radius:10px;background:rgba(90,150,255,.12);display:grid;place-items:center">🔒</div>
+<div><div style="font-weight:700;color:#a8c6f0;font-size:13px">Six Eyes • Secure Access • Gojo 3D</div><div style="font-size:11px;color:#6b8ab8">Foto Gojo di belakang logo nanparak — 3D jelas estetik</div></div>
+</div>
+
+<div style="position:relative;margin-top:14px"><span style="position:absolute;left:12px;top:50%;transform:translateY(-50%)">👤</span><input id="user" class="input" value="dilzNoelz" placeholder="Username or Email — BEBAS — dilzNoelz"></div>
+<div style="position:relative;margin-top:8px"><span style="position:absolute;left:12px;top:50%;transform:translateY(-50%)">🔒</span><input id="pass" class="input" type="password" value="nanparak123" placeholder="Password — BEBAS — nanparak123"></div>
+
+<button class="btn" onclick="let u=document.getElementById('user').value||'dilzNoelz';document.getElementById('nama').innerText=u;document.getElementById('userShow').innerText=u;let a=document.getElementById('musik');a.src='https://cdn.pixabay.com/audio/2022/10/30/audio_8ef06a37a0.mp3';a.play().catch(()=>{});document.getElementById('appBox').scrollIntoView({behavior:'smooth'})">⚡ LOGIN — Gojo Behind Logo 3D — Pasti Masuk</button>
+
+<div style="margin-top:14px;background:rgba(5,18,40,.7);border:1px solid rgba(90,150,255,.18);border-radius:12px;padding:10px;display:flex;gap:10px;align-items:center">
+<div style="width:28px;height:28px;border-radius:8px;background:rgba(90,150,255,.12);display:grid;place-items:center">🎵</div>
+<div style="flex:1"><div style="font-size:11px;color:#a8c6f0">Now Playing: <b style="color:#fff">akumilikmu — auto 3D</b></div><div style="height:3px;background:rgba(90,150,255,.15);border-radius:999px;margin-top:4px"><div style="width:38%;height:100%;background:linear-gradient(90deg,#7ab8ff,#fff)"></div></div></div>
+<div style="font-size:10px;color:#6b8ab8">0:32 / 2:41</div>
+</div>
+
+<div style="text-align:center;margin-top:10px;font-size:10px;color:#5a7ab5">by dilzNoeltz • v2.1.0 • Secure • Foto Gojo di belakang logo — 3D Estetik Jelas — Gak Jelek</div>
+</div>
+</div>
+
+<div id="appBox" style="position:relative;z-index:2;max-width:1000px;margin:0 auto;padding:12px">
+
+<div class="box" style="text-align:center;background:linear-gradient(90deg,rgba(12,28,60,.85),rgba(8,20,44,.95));overflow:hidden">
+<img class="bg-mini" src="https://i.imgur.com/8Km9tLL.jpg" alt="gojo">
+<b>nanparak • by dilzNoeltz • Gojo Behind Logo • 3D Jelas Estetik • <span id="userShow">dilzNoelz</span></b>
+<div style="height:180px;border-radius:12px;overflow:hidden;margin-top:10px;border:1px solid rgba(90,150,255,.2);position:relative">
+<img src="https://i.imgur.com/8Km9tLL.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center 10%" alt="gojo inside">
+<div style="position:absolute;inset:0;background:linear-gradient(transparent,rgba(2,10,26,.8))"></div>
+<div style="position:absolute;bottom:8px;left:10px;font-size:11px;color:#a8c6f0">Gojo Satoru Six Eyes • 3D Estetik Jelas • Foto Gojo di belakang logo</div>
+</div>
+</div>
+
+<div class="box"><b>🎵 Musik Otomatis: akumilikmu ✅ — 3D</b><audio id="musik" controls loop style="width:100%;margin-top:8px;height:32px"></audio><div style="font-size:11px;color:#6b8ab8;margin-top:4px">akumilikmu — by dilzNoeltz — Auto play khusus ber 3 — Gojo Behind Logo</div></div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+<div class="box" style="text-align:center"><div style="height:60px;border-radius:10px;overflow:hidden;margin-bottom:6px"><img src="https://i.imgur.com/8Km9tLL.jpg" style="width:100%;height:100%;object-fit:cover"></div>☀️ 31° / ❄️ 18°<br><small>Cuaca Panas/Dingin ✅ — 3D Jelas</small></div>
+<div class="box" style="text-align:center"><div style="height:60px;border-radius:10px;overflow:hidden;margin-bottom:6px"><img src="https://i.imgur.com/8Km9tLL.jpg" style="width:100%;height:100%;object-fit:cover"></div>🔋 74% Charging<br><small>Baterai ✅ — 3D Jelas</small></div>
+<div class="box" style="text-align:center"><div style="height:60px;border-radius:10px;overflow:hidden;margin-bottom:6px"><img src="https://i.imgur.com/8Km9tLL.jpg" style="width:100%;height:100%;object-fit:cover"></div>👤 <span id="nama">dilzNoelz</span><br><small>Profil ✅ — 3D Jelas</small></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1.2fr.8fr;gap:8px">
+<div class="box"><b>💬 Chat Ber 3 + Stiker/Emoji ⚡ — Gojo 3D Jelas ✅</b>
+<div style="height:180px;overflow:auto;background:rgba(5,18,40,.6);border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:6px;margin-top:8px" id="chatBox">
+<div style="padding:8px;border-radius:12px;background:#162a52;font-size:12px"><b>ainan:</b> min Gojo di belakang logo keren banget 😍 3D jelas!</div>
+<div style="padding:8px;border-radius:12px;background:#7ab8ff;color:#00122e;font-size:12px;align-self:flex-end"><b>dilzNoelz:</b> ini versi Gojo behind logo — jelas 3D estetik Min! ⚡👁️</div>
+<div style="padding:8px;border-radius:12px;background:#162a52;font-size:12px"><b>raka:</b> gokil Min — Six Eyes 3D jelas 🔥</div>
+</div>
+<div style="display:flex;gap:6px;margin-top:8px"><input id="chatIn" class="input" style="margin-top:0" placeholder="Ketik..."><button class="btn" style="width:auto;margin-top:0;padding:10px 14px" onclick="let i=document.getElementById('chatIn');if(i.value){let b=document.getElementById('chatBox');b.innerHTML+=`<div style=padding:8px;border-radius:12px;background:#7ab8ff;color:#00122e;font-size:12px;align-self:flex-end><b>${document.getElementById('nama').innerText}:</b> ${i.value}</div>`;i.value='';b.scrollTop=9999}">Kirim</button></div>
+</div>
+
+<div class="box"><b>🛠️ Tools — SSSTikTok + Video HD + Foto HD/Estetik + Gojo 3D Filter ✅</b>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px">
+<div style="background:#05102a;border-radius:10px;padding:10px;text-align:center">🎵<br><small>SSSTikTok ✅</small></div>
+<div style="background:#05102a;border-radius:10px;padding:10px;text-align:center">✨<br><small>Foto HD/Estetik ✅</small></div>
+<div style="background:#05102a;border-radius:10px;padding:10px;text-align:center">🎬<br><small>Edit Video HD ✅</small></div>
+<div style="background:#05102a;border-radius:10px;padding:10px;text-align:center">👁️<br><small>Gojo 3D Filter</small></div>
+</div>
+<div style="margin-top:8px;font-size:11px;color:#6b8ab8">Foto Gojo di belakang logo nanparak — Pas masuk jelas 3D estetik — Gak jelek — Semua tombol bisa di pencet — by dilzNoeltz</div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
