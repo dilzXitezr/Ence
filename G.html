@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DILZNOELZ AI BOT - HD6 - PURPLE - HITAM MISTERIUS</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#050508;color:#e8e8e8;font-family:system-ui;height:100vh;display:flex;flex-direction:column}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(12,8,20,.9);border-bottom:1px solid rgba(140,80,255,.2)}
+.chat{flex:1;overflow:auto;padding:16px;max-width:700px;width:100%;margin:0 auto}
+.bubble{padding:12px 14px;border-radius:16px;margin:8px 0;max-width:85%;line-height:1.5;font-size:14px}
+.bot{background:linear-gradient(180deg,rgba(22,16,32,.9),rgba(14,10,22,.95));border:1px solid rgba(140,80,255,.2);border-left:3px solid #8c50ff}
+.user{background:linear-gradient(90deg,#8c50ff,#a070ff);margin-left:auto;color:#fff}
+.inputbar{display:flex;gap:8px;padding:12px;background:rgba(12,8,20,.9);border-top:1px solid rgba(140,80,255,.2);max-width:700px;width:100%;margin:0 auto}
+.input{flex:1;padding:13px 16px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(140,80,255,.2);color:#fff;outline:none}
+.btn{padding:12px 18px;border-radius:999px;background:linear-gradient(90deg,#8c50ff,#a070ff);border:none;color:#fff;font-weight:800}
+.chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(140,80,255,.12);border:1px solid rgba(140,80,255,.2);font-size:11px;margin:3px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="nav"><div style="font-weight:900">DILZNOELZ <span style="color:#a080ff">AI BOT</span> 💜</div><div style="font-size:10px;color:#8a6ab0">HD 6 • PURPLE • HITAM MISTERIUS • ELEGAN</div></div>
+<div class="chat" id="chat">
+<div class="bubble bot">💜 Halo! Gue <b>DILZNOELZ AI BOT</b> — HD 6 — Hitam Misterius — Purple — Elegan.<br><br>Mau tanya apa Min? Gue bisa jawab tentang bisnis, ide konten, caption, atau bantu bikin web.<br><br><span style="font-size:11px;color:#8a6ab0">Private buat lu aja — WA: 085720945347</span></div>
+<div style="margin-top:12px">
+<div class="chip" onclick="ask(this.innerText)">✨ Bikin caption IG</div>
+<div class="chip" onclick="ask(this.innerText)">🚀 Ide bisnis online</div>
+<div class="chip" onclick="ask(this.innerText)">💬 Bikin web toko</div>
+<div class="chip" onclick="ask(this.innerText)">🎨 Ide logo purple</div>
+</div>
+</div>
+<div class="inputbar">
+<input id="inp" class="input" placeholder="Tanya AI Bot DilzNoelz... HD 6 Purple 💜" onkeydown="if(event.key==='Enter')send()">
+<button class="btn" onclick="send()">KIRIM 💜</button>
+</div>
+<script>
+const chat=document.getElementById('chat');
+const inp=document.getElementById('inp');
+const replies=[
+"Siap Dilz! 💜 Ide nya: Bikin web landing page HD 6 - Hitam Misterius - Purple Elegan - tambah tombol WA 085720945347 - biar customer langsung chat - becus!",
+"Gue DILZNOELZ AI BOT - HD 6 - Purple - Hitam Misterius - Elegan. Mau gue bantu bikin caption IG? Contoh: 'DILZNOELZ BUSINESS 💜 HD 6 - Hitam Misterius - Purple - Elegan - Bandung - Chat WA 085720945347'",
+"Untuk bisnis legal yang cuan: 1. Jasa desain 2. Top up legal 3. Template web 4. Jasa editing - semua bisa pakai web yang udah gue bikin - HD 6 - Purple - Elegan - private!",
+"Keren Dilz! Logo purple hitam misterius itu elegan parah 💜 - gradient #8c50ff ke #a070ff - glow ungu - HD 6 - cocok buat brand DILZNOELZ BUSINESS",
+"Min, kalau mau web AI bot ini konek ke WA lu 085720945347, tinggal klik tombol WA di pojok - nanti customer bisa chat AI dulu, baru lanjut WA - jadi bisnis lu keliatan pro!"
+];
+function addBubble(t,cls){const d=document.createElement('div');d.className='bubble '+cls;d.innerHTML=t;chat.appendChild(d);chat.scrollTop=chat.scrollHeight;}
+function ask(t){inp.value=t;send();}
+function send(){let v=inp.value.trim();if(!v)return;addBubble(v,'user');inp.value='';setTimeout(()=>{let r=replies[Math.floor(Math.random()*replies.length)];addBubble('💜 <b>DILZNOELZ AI BOT:</b><br>'+r+'<br><br><a href="https://wa.me/6285720945347?text=Halo%20Min%20DilzNoelz%20AI%20BOT" style="color:#a080ff">💬 Lanjut chat WA 085720945347</a>','bot');},600);}
+</script>
+</body>
+</html>
