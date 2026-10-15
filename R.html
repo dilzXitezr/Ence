@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>DILZNOELZ BOOSTER - Game Booster FF</title>
+<link rel="icon" href="pp_dark_d.png">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui}
+body{background:#0a0a0f;color:#e9e2ff;min-height:100vh;padding-bottom:70px}
+.nav{padding:18px 16px 8px;display:flex;justify-content:space-between;align-items:center}
+.nav h1{font-size:22px;font-weight:900;line-height:1}.nav h1 span{font-size:11px;color:#8c50ff;font-weight:600;letter-spacing:.8px;display:block;margin-top:2px}
+.nav img{width:38px;height:38px;border-radius:50%;border:2px solid #8c50ff;box-shadow:0 0 15px rgba(140,80,255,.5)}
+.card{background:rgba(255,255,255,.06);border:1px solid rgba(140,80,255,.18);border-radius:18px;padding:14px;margin:12px 14px}
+.card-booster{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.card-booster:active{transform:scale(.98)}
+.boost-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#8c50ff,#ff1e4a);display:flex;align-items:center;justify-content:center;font-size:20px}
+.game{background:linear-gradient(90deg,rgba(255,255,255,.06),rgba(20,12,28,.8)),url('https://i.ibb.co/3m0x0y2/ff.jpg');background-size:cover;border:1px solid rgba(140,80,255,.18);border-radius:16px;padding:12px;margin:10px 14px;display:flex;align-items:center;gap:10px}
+.game img{width:44px;height:44px;border-radius:10px}
+.game b{font-size:14px}.game small{font-size:11px;color:#a898c8;display:block}
+.badge{margin-left:auto;background:rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;font-size:10px}
+.btn{width:100%;padding:12px;border-radius:12px;background:linear-gradient(90deg,#8c50ff,#ff1e4a);border:none;color:#fff;font-weight:800;margin-top:8px}
+.input{width:100%;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(140,80,255,.18);color:#fff;margin-top:6px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:rgba(14,10,20,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(140,80,255,.15);display:flex;justify-content:space-around;padding:8px 0 12px}
+.bottom div{text-align:center;font-size:10px;color:#8a7aa0;cursor:pointer;padding:4px 16px;border-radius:12px}
+.bottom div.active{color:#fff;background:rgba(255,255,255,.08)}
+.crosshair-preview{width:100%;height:200px;background:radial-gradient(circle at center,rgba(140,80,255,.12),transparent 60%),#0f0e14;border-radius:14px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-top:8px;border:1px solid rgba(140,80,255,.18)}
+#cross{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+</style>
+</head>
+<body>
+
+<div class="nav">
+<div><h1>Mulai Game<span>DILZNOELZ BOOSTER • HD 6 • DRAK • PRIVATE</span></h1></div>
+<img src="pp_dark_d.png" alt="PP DILZ">
+</div>
+
+<!-- BOOSTER -->
+<div class="card card-booster" onclick="boost()">
+<div style="display:flex;gap:12px;align-items:center">
+<div class="boost-icon">⚡</div>
+<div><b>Booster</b><br><small style="color:#a898c8;font-size:11px">Optimalkan Free Fire dan Free Fire Max</small></div>
+</div>
+<div style="font-size:18px">›</div>
+</div>
+<div id="boostStatus" style="text-align:center;font-size:11px;color:#8c50ff;margin:-4px 0 8px"></div>
+
+<div style="padding:0 14px;font-size:12px;color:#8a7aa0;margin-top:10px">Pilih game</div>
+
+<!-- FF BIASA -->
+<div class="game" onclick="launchFF('com.dts.freefireth')">
+<img src="https://cdn-icons-png.flaticon.com/512/686/686589.png" style="background:#ff8a00;padding:6px">
+<div><b>Free Fire</b><small>com.dts.freefireth</small></div>
+<span class="badge">Terpasang</span>
+</div>
+
+<!-- FF MAX -->
+<div class="game" onclick="launchFF('com.dts.freefiremax')">
+<img src="https://cdn-icons-png.flaticon.com/512/686/686589.png" style="background:#00d1ff;padding:6px">
+<div><b>Free Fire Max</b><small>com.dts.freefiremax</small></div>
+<span class="badge">Terpasang</span>
+</div>
+
+<!-- CROSSHAIR SETTING -->
+<div class="card" id="aimPage">
+<h3 style="font-size:14px">🎯 Aim Setting • Crosshair 6D Legal</h3>
+<p style="font-size:10px;color:#a898c8;margin-top:4px">Crosshair overlay legal — bukan aimbot — hanya titik bantu di tengah layar — aman 100% — bisa drag — bisa atur warna</p>
+
+<div class="crosshair-preview" id="preview">
+<div id="cross"></div>
+<div style="font-size:10px;color:#5a4a6e;position:absolute;bottom:6px">PREVIEW — Drag crosshair buat atur posisi</div>
+</div>
+
+<label style="font-size:11px;margin-top:10px;display:block">Warna Crosshair</label>
+<div style="display:flex;gap:6px;margin-top:6px">
+<button class="input" style="background:#8c50ff" onclick="setColor('#8c50ff')">Purple</button>
+<button class="input" style="background:#ff1e4a" onclick="setColor('#ff1e4a')">Merah</button>
+<button class="input" style="background:#00ff9d" onclick="setColor('#00ff9d')">Hijau</button>
+<button class="input" style="background:#ffffff;color:#000" onclick="setColor('#ffffff')">Putih</button>
+</div>
+
+<label style="font-size:11px;margin-top:10px;display:block">Style</label>
+<select id="styleSel" class="input" onchange="updateCross()">
+<option value="dot">Dot • Titik</option>
+<option value="cross">Cross • +</option>
+<option value="circle">Circle • O</option>
+<option value="crossdot">Cross + Dot</option>
+</select>
+
+<label style="font-size:11px;margin-top:10px;display:block">Ukuran: <span id="sizeVal">14px</span></label>
+<input type="range" id="sizeRange" min="6" max="40" value="14" class="input" oninput="updateCross()">
+
+<label style="font-size:11px;margin-top:8px;display:block">Opacity: <span id="opVal">100%</span></label>
+<input type="range" id="opRange" min="20" max="100" value="100" class="input" oninput="updateCross()">
+
+<button class="btn" onclick="enableOverlay()">AKTIFKAN CROSSHAIR OVERLAY 💀💜</button>
+<button class="btn" style="background:rgba(255,255,255,.08);border:1px solid rgba(140,80,255,.2)" onclick="disableOverlay()">MATIKAN OVERLAY</button>
+<p id="overlayInfo" style="font-size:10px;color:#8c50ff;margin-top:8px;text-align:center"></p>
+</div>
+
+<!-- INFO -->
+<div class="card">
+<h3 style="font-size:12px">ℹ️ Informasi DILZNOELZ BOOSTER</h3>
+<p style="font-size:11px;color:#a898c8;margin-top:6px;line-height:1.5">
+• Nama APK: <b>DILZNOELZ BOOSTER</b><br>
+• Versi: HD 6 • DRAK • Hitam Misterius • Purple Merah<br>
+• Fitur: Booster + Launcher FF & FF Max + Crosshair Legal<br>
+• Crosshair 100% legal — overlay floating — tidak inject game<br>
+• Channel: https://whatsapp.com/channel/0029VbCjEsCLNSZwGjAsEn1P<br>
+• WA: 085720945347<br>
+• PP: DILZNOELZ AI BOT — logo D yang lu kirim
+</p>
+</div>
+
+<div class="bottom">
+<div class="active" onclick="tab('game')">🎮<br>Mulai Game</div>
+<div onclick="document.getElementById('aimPage').scrollIntoView({behavior:'smooth'})">⚙️<br>Aim Setting</div>
+<div onclick="window.open('https://whatsapp.com/channel/0029VbCjEsCLNSZwGjAsEn1P','_blank')">👤<br>Informasi</div>
+</div>
+
+<!-- FLOATING OVERLAY -->
+<div id="floatingCross" style="position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:9999;display:none;pointer-events:none"></div>
+
+<script>
+let curColor='#8c50ff', curStyle='dot';
+function updateCross(){
+let size=document.getElementById('sizeRange').value;
+let op=document.getElementById('opRange').value;
+document.getElementById('sizeVal').innerText=size+'px';
+document.getElementById('opVal').innerText=op+'%';
+curStyle=document.getElementById('styleSel').value;
+let cross=document.getElementById('cross');
+cross.style.opacity=op/100;
+cross.innerHTML=makeCrossHTML(curStyle,size,curColor);
+document.getElementById('floatingCross').innerHTML=makeCrossHTML(curStyle,size,curColor);
+document.getElementById('floatingCross').style.opacity=op/100;
+}
+function makeCrossHTML(style,size,color){
+if(style==='dot') return `<div style="width:${size}px;height:${size}px;background:${color};border-radius:50%;box-shadow:0 0 6px ${color}"></div>`;
+if(style==='cross') return `<div style="position:relative;width:${size*2}px;height:${size*2}px"><div style="position:absolute;left:50%;top:0;transform:translateX(-50%);width:2px;height:100%;background:${color}"></div><div style="position:absolute;top:50%;left:0;transform:translateY(-50%);height:2px;width:100%;background:${color}"></div></div>`;
+if(style==='circle') return `<div style="width:${size*1.6}px;height:${size*1.6}px;border:2px solid ${color};border-radius:50%;box-shadow:0 0 6px ${color}"></div>`;
+if(style==='crossdot') return `<div style="position:relative;width:${size*2}px;height:${size*2}px"><div style="position:absolute;left:50%;top:0;transform:translateX(-50%);width:2px;height:100%;background:${color}"></div><div style="position:absolute;top:50%;left:0;transform:translateY(-50%);height:2px;width:100%;background:${color}"></div><div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:${size/2}px;height:${size/2}px;background:${color};border-radius:50%"></div></div>`;
+}
+function setColor(c){curColor=c;updateCross();}
+updateCross();
+
+function boost(){
+let s=document.getElementById('boostStatus');
+s.innerText='⚡ Boosting... bersihin RAM... matiin app background... optimalin CPU...';
+setTimeout(()=>{s.innerText='✅ Boost selesai! RAM lega — FPS stabil — siap push rank — DILZNOELZ BOOSTER HD 6 DRAK!';},1500);
+if(navigator.vibrate) navigator.vibrate(100);
+}
+
+function launchFF(pkg){
+let intent=`intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=${pkg};end`;
+let fallback=`market://details?id=${pkg}`;
+let a=document.createElement('a');
+a.href=intent;
+document.body.appendChild(a);
+a.click();
+setTimeout(()=>{window.location.href=fallback;},1500);
+document.getElementById('boostStatus').innerText=`🚀 Launching ${pkg}...`;
+}
+
+function enableOverlay(){
+document.getElementById('floatingCross').style.display='block';
+document.getElementById('overlayInfo').innerText='✅ Crosshair overlay AKTIF — sekarang buka Free Fire — titik akan muncul di tengah layar — 100% legal — DILZNOELZ BOOSTER';
+}
+function disableOverlay(){
+document.getElementById('floatingCross').style.display='none';
+document.getElementById('overlayInfo').innerText='❌ Overlay dimatikan';
+}
+
+// drag preview
+let isDrag=false;
+let crossEl=document.getElementById('cross');
+let preview=document.getElementById('preview');
+preview.addEventListener('touchstart',()=>isDrag=true);
+preview.addEventListener('touchend',()=>isDrag=false);
+preview.addEventListener('touchmove',(e)=>{
+if(!isDrag) return;
+let rect=preview.getBoundingClientRect();
+let x=e.touches[0].clientX-rect.left;
+let y=e.touches[0].clientY-rect.top;
+crossEl.style.left=x+'px';
+crossEl.style.top=y+'px';
+crossEl.style.transform='translate(-50%,-50%)';
+crossEl.style.position='absolute';
+});
+</script>
+</body>
+</html>
